@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Budget App</title>
+</head>
+<body>
+  <h1>Budget Übersicht</h1>
+  <p>Einnahmen: {{ income }}</p>
+  <p>Ausgaben: {{ expenses }}</p>
+  <p>Gesamtbudget: {{ balance }}</p>
+
+  <h2>Einträge</h2>
+  <ul>
+    {% for entry in entries %}
+      <li>{{ entry.description }}: {{ entry.amount }} ({{ entry.category }})</li>
+    {% endfor %}
+  </ul>
+  <a href="{{ url_for('add') }}">Neuen Eintrag hinzufügen</a>
+</body>
+</html>
